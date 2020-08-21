@@ -28,9 +28,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-        ),
+       
         body: buildPageView(context),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
@@ -38,7 +36,8 @@ class MyHomePage extends StatelessWidget {
             context.read<Counter>().incrementCounter();
           },
           tooltip: 'Increment',
-          child: Icon(Icons.add),
+          child: Icon(Icons.new_releases),
+          backgroundColor: Colors.blueGrey,
         ),
         bottomNavigationBar: buildBottomAppBar(),
       );
@@ -48,8 +47,7 @@ class MyHomePage extends StatelessWidget {
         children: [
           Center(
             child: Container(
-              child: Text('${ctx.watch<Counter>().getCounter}',
-                  style: Theme.of(ctx).textTheme.headline4),
+              child: quoteCont(ctx),
             ),
           ),
           Center(
@@ -59,6 +57,26 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       );
+
+  Container quoteCont(BuildContext ctx) => Container(
+    height: 200,
+    width: 350,
+        child: Card(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('${ctx.watch<Counter>().getQuote}',
+                  style: Theme.of(ctx).textTheme.headline2,
+                  ),
+            ],
+          ),
+          elevation: 3.0,
+        ),
+      );
+
+  // Container quoteCont(BuildContext ctx) => Container(
+  //     child: Text('${ctx.watch<Counter>().getQuote}',
+  //         style: Theme.of(ctx).textTheme.headline1));
 
   BottomAppBar buildBottomAppBar() => BottomAppBar(
         child: Row(
