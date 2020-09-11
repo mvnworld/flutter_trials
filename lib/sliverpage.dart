@@ -68,24 +68,6 @@ class _SliverPageState extends State<SliverPage> {
               stretch: true,
               excludeHeaderSemantics: true,
             ),
-            // SliverGrid(
-            //   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            //     maxCrossAxisExtent: 200.0,
-            //     mainAxisSpacing: 10.0,
-            //     crossAxisSpacing: 10.0,
-            //     childAspectRatio: 4.0,
-            //   ),
-            //   delegate: SliverChildBuilderDelegate(
-            //     (BuildContext context, int index) {
-            //       return Container(
-            //         alignment: Alignment.center,
-            //         color: Colors.teal[100 * (index % 9)],
-            //         child: Text('grid item $index'),
-            //       );
-            //     },
-            //     childCount: _menus.length,
-            //   ),
-            // )
 
             //You can use SliverGrid...
             SliverGrid.count(
@@ -97,17 +79,6 @@ class _SliverPageState extends State<SliverPage> {
                   )
                   .toList(growable: false),
             ),
-
-            //..another option is to use SliverList
-            // SliverList(
-            //   delegate: SliverChildBuilderDelegate(
-            //     (context, index) => buildCard(
-            //       context,
-            //       _menus[index],
-            //     ),
-            //     childCount: _menus.length,
-            //   ),
-            // ),
           ],
         ),
       ),
@@ -170,65 +141,8 @@ class _SliverPageState extends State<SliverPage> {
             ),
           ],
         ),
-        // Stack(
-        //   children: [
-        //     Text(
-        //       menuData.title,
-        //       style: Theme.of(context).textTheme.headline5,
-        //     ),
-        //     Positioned(
-        //       top: 40,
-        //       left: 40,
-        //       child: Container(
-        //         height: 64,
-        //         width: 64,
-        //         decoration: BoxDecoration(
-        //           image: DecorationImage(
-        //             image: AssetImage("assets/${menuData.iconFile}"),
-        //             fit: BoxFit.fill,
-        //           ),
-        //         ),
-        //       ),
-        //     ),
-        //     Positioned(
-        //       top: 140,
-        //       child: Column(
-        //         children: [
-        //           Text(
-        //             'A blend of tea leaves boiled to perfection mixed with skimmed milk',
-        //             softWrap: true,
-        //             overflow: TextOverflow.ellipsis,
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //   ],
-        // ),
       ),
     );
-    // return Card(
-    //   elevation: 3,
-    //   shadowColor: Colors.black,
-    //   color: Colors.white,
-    //   child: Container(
-    //     height: 200,
-    //     width: 150,
-    //     child: InkWell(
-    //       focusColor: Colors.blue,
-    //       onTap: () => {},
-    //       child: ListTile(
-    //         title: Text(
-    //           'Steeped Tea',
-    //           style: Theme.of(context).textTheme.headline5,
-    //         ),
-    //         subtitle: Text(
-    //           'A blend of tea leaves boiled to perfection mixed with skimmed milk',
-    //           //style: Theme.of(context).textTheme.headline6,
-    //         ),
-    //       ),
-    //     ),
-    //   ),
-    // );
   }
 }
 
